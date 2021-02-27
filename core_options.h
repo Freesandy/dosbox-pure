@@ -20,22 +20,22 @@ static retro_core_option_definition option_defs[] =
 {
 	{
 		"dosbox_pure_advanced",
-		"Show Advanced Options",
-		"Close and re-open the menu to refresh this options page.",
-		{ { "false", "Off" }, { "true", "On" } },
+		"显示高级选项",
+		"关闭并重新打开菜单以刷新此选项页面.",
+		{ { "false", "关" }, { "true", "开" } },
 		"false"
 	},
 	{
 		"dosbox_pure_savestate",
-		"Save States Support",
-		"Make sure to test it in each game before using it. Complex late era DOS games might have problems." "\n"
-		"Be aware that states saved with different video or CPU settings are not loadable." "\n"
-		"Rewind support comes at a high performance cost, setting it requires a full core restart." "\n"
-		"Save states might not be compatible with new versions of this core." "\n\n", //end of top section
+		"支持即时存档",
+		"一定要在使用每个游戏之前对其进行测试. 复杂的后期DOS游戏可能会出现问题" "\n"
+		"请注意: 无法加载使用不同视频或CPU设置保存的状态." "\n"
+		"倒带支持需要耗费很高的性能, 设置它需要完全重启内核." "\n"
+		"保存状态可能与此核心将来的新版本不兼容." "\n\n", //end of top section
 		{
-			{ "on",       "Enable save states" },
-			{ "rewind",   "Enable save states with rewind" },
-			{ "disabled", "Disabled" },
+			{ "on",       "启用即时存档" },
+			{ "rewind",   "启用即时存档和倒带功能" },
+			{ "disabled", "禁用" },
 		},
 		"on"
 	},
@@ -43,22 +43,22 @@ static retro_core_option_definition option_defs[] =
 	// Input
 	{
 		"dosbox_pure_bind_unused",
-		"Input > Bind Unused Buttons",
-		"Bind all unused controller buttons to keyboard keys.\nCan be remapped in the Controls section of the core settings.",
-		{ { "true", "On" }, { "false", "Off" } },
+		"输入 > 绑定未使用的按钮",
+		"将所有未使用的控制器按钮绑定到键盘键. 可以在核心设置的控制部分中重新映射.",
+		{ { "true", "开" }, { "false", "关" } },
 		"true"
 	},
 	{
 		"dosbox_pure_on_screen_keyboard",
-		"Input > Enable On Screen Keyboard",
-		"Enable the On Screen Keyboard feature which can be activated with the L3 button on the controller.",
-		{ { "true", "On" }, { "false", "Off" } },
+		"输入 > 启用屏幕键盘",
+		"启用可以通过控制器上的L3按钮激活的屏幕键盘功能.",
+		{ { "true", "开" }, { "false", "关" } },
 		"true"
 	},
 	{
 		"dosbox_pure_mouse_wheel",
-		"Input > Bind Mouse Wheel To Key",
-		"Bind mouse wheel up and down to two keyboard keys to be able to use it in DOS games.",
+		"输入 > 将鼠标滚轮绑定到键盘",
+		"将鼠标滚轮上下绑定至两个键盘键, 以便能够在DOS游戏中使用.",
 		{
 			{ "67/68", "Left-Bracket/Right-Bracket" },
 			{ "72/71", "Comma/Period" },
@@ -72,14 +72,14 @@ static retro_core_option_definition option_defs[] =
 			{ "84/85", "Up/Down" },
 			{ "83/86", "Left/Right" },
 			{ "11/13", "Q/E" },
-			{ "none", "Disable" },
+			{ "none", "关闭" },
 		},
 		"67/68"
 	},
 	{
 		"dosbox_pure_mouse_speed_factor",
-		"Input > Mouse Sensitivity",
-		"Sets the overall mouse cursor movement speed." "\n\n", //end of Input section
+		"输入 > 鼠标灵敏度",
+		"设置鼠标光标的整体移动速度." "\n\n", //end of Input section
 		{
 			{ "0.2",  "20%" }, { "0.25",  "25%" }, { "0.3",  "30%" }, { "0.35",  "35%" }, { "0.4",  "40%" }, { "0.45",  "45%" },
 			{ "0.5",  "50%" }, { "0.55",  "55%" }, { "0.6",  "60%" }, { "0.65",  "65%" }, { "0.7",  "70%" }, { "0.75",  "75%" },
@@ -93,8 +93,8 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_mouse_speed_factor_x",
-		"Input > Advanced > Horizontal Mouse Sensitivity.",
-		"Experiment with this value if the mouse is too fast/slow when moving left/right.",
+		"输入 > 高级 > 水平鼠标灵敏度.",
+		"如果在向左/向右移动时鼠标太快/太慢, 请使用此值进行实验.",
 		{
 			{ "0.2",  "20%" }, { "0.25",  "25%" }, { "0.3",  "30%" }, { "0.35",  "35%" }, { "0.4",  "40%" }, { "0.45",  "45%" },
 			{ "0.5",  "50%" }, { "0.55",  "55%" }, { "0.6",  "60%" }, { "0.65",  "65%" }, { "0.7",  "70%" }, { "0.75",  "75%" },
@@ -108,25 +108,25 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_mouse_input",
-		"Input > Advanced > Use Mouse Input",
-		"You can disable input handling from a mouse or a touchscreen (emulated mouse through joypad will still work).",
-		{ { "true", "On (default)" }, { "false", "Off" } },
+		"输入 > 高级 > 使用鼠标输入",
+		"可以禁用鼠标或触摸屏的输入处理 (通过手柄模拟的鼠标仍然可以使用).",
+		{ { "true", "开 (默认)" }, { "false", "关" } },
 		"true"
 	},
 	{
 		"dosbox_pure_auto_mapping",
-		"Input > Advanced > Automatic Game Pad Mappings",
-		"DOSBox Pure can automatically apply a gamepad control mapping scheme when it detects a game." "\n"
-		"These button mappings are provided by the Keyb2Joypad Project (by Jemy Murphy and bigjim).",
-		{ { "true", "On (default)" }, { "notify", "Enable with notification on game detection" }, { "false", "Off" } },
+		"输入 > 高级 > 自动游戏手柄映射",
+		"DOSBox Pure在检测到游戏时可以自动应用游戏手柄控件映射方案." "\n"
+		"这些按钮映射由Keyb2Joypad项目提供 (提供者为Jemy Murphy和bigjim).",
+		{ { "true", "开 (默认)" }, { "notify", "启用游戏检测通知" }, { "false", "关" } },
 		"true"
 	},
 	{
 		"dosbox_pure_keyboard_layout",
-		"Input > Advanced > Keyboard Layout",
-		"Select the keyboard layout (will not change the On Screen Keyboard).",
+		"输入 > 高级 > 键盘布局",
+		"选择键盘布局(不会更改屏幕键盘).",
 		{
-			{ "us",    "US (default)" },
+			{ "us",    "US (默认)" },
 			{ "uk",    "UK" },
 			{ "br",    "Brazil" },
 			{ "hr",    "Croatia" },
@@ -148,16 +148,16 @@ static retro_core_option_definition option_defs[] =
 			{ "si",    "Slovenia" },
 			{ "sp",    "Spain" },
 			{ "sv",    "Sweden" },
-			{ "sg",    "Switzerland (German)" },
-			{ "sf",    "Switzerland (French)" },
+			{ "sg",    "Switzerland (德)" },
+			{ "sf",    "Switzerland (法)" },
 			{ "tr",    "Turkey" },
 		},
 		"us"
 	},
 	{
 		"dosbox_pure_joystick_analog_deadzone",
-		"Input > Joystick Analog Deadzone",
-		"Set the deadzone of the joystick analog sticks. May be used to eliminate drift caused by poorly calibrated joystick hardware.",
+		"输入 > 游戏杆模拟死区",
+		"设置操纵杆模拟摇杆的死区. 可用于消除因未正确校准的操纵杆硬件而引起的漂移.",
 		{
          { "0",  "0%" },
          { "5",  "5%" },
@@ -174,17 +174,17 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_joystick_timed",
-		"Input > Advanced > Enable Joystick Timed Intervals",
-		"Enable timed intervals for joystick axes. Experiment with this option if your joystick drifts." "\n\n", //end of Input > Advanced section
-		{ { "true", "On (default)" }, { "false", "Off" } },
+		"输入>高级>启用手柄定时间隔",
+		"为操纵杆轴启用定时间隔. 如果操纵杆漂移, 请尝试使用此选项." "\n\n", //end of Input > Advanced section
+		{ { "true", "开 (默认)" }, { "false", "关" } },
 		"true"
 	},
 
 	// Performance
 	{
 		"dosbox_pure_cycles_scale",
-		"Performance > Performance Scale",
-		"Fine tune the emulated performance for specific needs.",
+		"性能 > 性能量表",
+		"针对特定需求微调模拟性能.",
 		{
 			{ "0.2",  "20%" }, { "0.25",  "25%" }, { "0.3",  "30%" }, { "0.35",  "35%" }, { "0.4",  "40%" }, { "0.45",  "45%" },
 			{ "0.5",  "50%" }, { "0.55",  "55%" }, { "0.6",  "60%" }, { "0.65",  "65%" }, { "0.7",  "70%" }, { "0.75",  "75%" },
@@ -198,11 +198,11 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_cycles",
-		"Performance > Emulated Performance",
-		"The raw performance that DOSBox will try to emulate." "\n\n", //end of Performance section
+		"性能 > 模拟性能",
+		"DOSBox将尝试模仿的原始性能." "\n\n", //end of Performance section
 		{
-			{ "auto",    "AUTO - DOSBox will try to detect performance needs (default)" },
-			{ "max",     "MAX - Emulate as many instructions as possible" },
+			{ "auto",    "自动 - DOSBox将尝试检测性能需求 (默认)" },
+			{ "max",     "最大 - 模拟尽可能多的指令" },
 			{ "315",     "8086/8088, 4.77 MHz from 1980 (315 cps)" },
 			{ "1320",    "286, 6 MHz from 1982 (1320 cps)" },
 			{ "2750",    "286, 12.5 MHz from 1985 (2750 cps)" },
@@ -221,36 +221,36 @@ static retro_core_option_definition option_defs[] =
 	// Video
 	{
 		"dosbox_pure_cga",
-		"Video > CGA Mode",
-		"The CGA variation that is being emulated.",
+		"视频 > CGA模式",
+		"正在模拟的CGA版本.",
 		{
-			{ "early_auto", "Early model, composite mode auto (default)" },
-			{ "early_on",   "Early model, composite mode on" },
-			{ "early_off",  "Early model, composite mode off" },
-			{ "late_auto", "Late model, composite mode auto" },
-			{ "late_on",   "Late model, composite mode on" },
-			{ "late_off",  "Late model, composite mode off" },
+			{ "early_auto", "早期模式, 复合模式自动 (默认)" },
+			{ "early_on",   "早期模式, 复合模式开启" },
+			{ "early_off",  "早期模式, 复合模式关闭" },
+			{ "late_auto", "后期模式, 复合模式自动" },
+			{ "late_on",   "后期模式, 复合模式开启" },
+			{ "late_off",  "后期模式, 复合模式关闭" },
 		},
 		"early_auto"
 	},
 	{
 		"dosbox_pure_hercules",
-		"Video > Hercules Color Mode",
-		"The color scheme for Hercules emulation.",
+		"视频 > Hercules色彩模式",
+		"Hercules模拟的配色方案.",
 		{
-			{ "white", "Black & white (default)" },
-			{ "amber", "Black & amber" },
-			{ "green", "Black & green" },
+			{ "white", "黑&白 (默认)" },
+			{ "amber", "黑&琥珀色" },
+			{ "green", "黑&绿" },
 		},
 		"white"
 	},
 	{
 		"dosbox_pure_svga",
-		"Video > SVGA Mode (restart required)",
-		"The SVGA variation that is being emulated. Try changing this if you encounter graphical glitches.",
+		"视频 > SVGA模式(需要重新启动)",
+		"正在仿真的SVGA版本. 如果遇到图形错误, 请尝试更改.",
 		{
-			{ "svga_s3",       "S3 Trio64 (default)" },
-			{ "vesa_nolfb",    "S3 Trio64 no-line buffer hack (reduces flickering in some games)" },
+			{ "svga_s3",       "S3 Trio64 (默认)" },
+			{ "vesa_nolfb",    "S3 Trio64 no-line buffer hack (减少某些游戏中的闪烁)" },
 			{ "vesa_oldvbe",   "S3 Trio64 VESA 1.3" },
 			{ "svga_et3000",   "Tseng Labs ET3000" },
 			{ "svga_et4000",   "Tseng Labs ET4000" },
@@ -260,37 +260,37 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_machine",
-		"Video > Emulated Graphics Chip (restart required)",
-		"The type of graphics chip that DOSBox will emulate.",
+		"视频 > 模拟的图形芯片 (需要重新启动)",
+		"DOSBox将模拟的图形芯片的类型.",
 		{
-			{ "svga",     "SVGA (Super Video Graphics Array) (default)" },
-			{ "vga",      "VGA (Video Graphics Array)" },
-			{ "ega",      "EGA (Enhanced Graphics Adapter" },
-			{ "cga",      "CGA (Color Graphics Adapter)" },
-			{ "tandy",    "Tandy (Tandy Graphics Adapter" },
-			{ "hercules", "Hercules (Hercules Graphics Card)" },
+			{ "svga",     "SVGA (超级视频图形阵列) (默认)" },
+			{ "vga",      "VGA (视频图形阵列)" },
+			{ "ega",      "EGA (增强的图形适配器" },
+			{ "cga",      "CGA (彩色图形适配器)" },
+			{ "tandy",    "Tandy (Tandy图形适配器" },
+			{ "hercules", "Hercules (Hercules图形卡)" },
 			{ "pcjr",     "PCjr" },
 		},
 		"svga"
 	},
 	{
 		"dosbox_pure_aspect_correction",
-		"Video > Aspect Ratio Correction.",
-		"When enabled, the core's aspect ratio is set to what a CRT monitor would display." "\n\n", //end of Video section
-		{ { "false", "Off (default)" }, { "true", "On" } },
+		"视频 > 宽高比校正",
+		"启用后, 核心的宽高比将设置为CRT监视器显示的内容." "\n\n", //end of Video section
+		{ { "false", "关 (默认)" }, { "true", "开" } },
 		"false"
 	},
 
 	// System
 	{
 		"dosbox_pure_memory_size",
-		"System > Memory Size (restart required)",
-		"The amount of (high) memory that the emulated machine has. You can also disable extended memory (EMS/XMS).",
+		"系统 > 内存大小 (需要重新启动)",
+		"模拟机具有的(最高) 内存. 还可以禁用扩展内存 (EMS/XMS).",
 		{
-			{ "none", "Disable extended memory (no EMS/XMS)" },
+			{ "none", "禁用扩展内存 (无EMS/XMS)" },
 			{ "4",  "4 MB" },
 			{ "8",  "8 MB" },
-			{ "16", "16 MB (default)" },
+			{ "16", "16 MB (默认)" },
 			{ "24", "24 MB" },
 			{ "32", "32 MB" },
 			{ "48", "48 MB" },
@@ -300,36 +300,36 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_cpu_type",
-		"System > CPU Type",
-		"Emulated CPU type. Auto is the fastest choice." "\n"
-			"Games that require specific CPU type selection:" "\n"
-			"386 (prefetch): X-Men: Madness in The Murderworld, Terminator 1, Contra, Fifa International Soccer 1994" "\n"
-			"486 (slow): Betrayal in Antara" "\n"
-			"Pentium (slow): Fifa International Soccer 1994, Windows 95/Windows 3.x games" "\n\n", //end of System section
+		"系统 > CPU类型",
+		"模拟的CPU类型. 自动是最快的选择." "\n"
+			"需要选择特定CPU类型的游戏:" "\n"
+			"386 (预取): X-Men: Madness in The Murderworld, Terminator 1, Contra, Fifa International Soccer 1994" "\n"
+			"486 (慢): Betrayal in Antara" "\n"
+			"Pentium (慢): Fifa International Soccer 1994, Windows 95/Windows 3.x games" "\n\n", //end of System section
 		{
-			{ "auto", "Auto - Mixed feature set with maximum performance and compatibility" },
-			{ "386", "386 - 386 instruction with fast memory access" },
-			{ "386_slow", "386 (slow) - 386 instruction set with memory privilege checks" },
-			{ "386_prefetch", "386 (prefetch) - With prefetch queue emulation (only on 'auto' and 'normal' core)" },
-			{ "486_slow", "486 (slow) - 486 instruction set with memory privilege checks" },
-			{ "pentium_slow", "Pentium (slow) - 586 instruction set with memory privilege checks" },
+			{ "auto", "自动 - 具有最佳性能和兼容性的混合功能集" },
+			{ "386", "386 - 386具有快速内存访问的指令" },
+			{ "386_slow", "386(慢) - 带有内存特权检查的386指令集" },
+			{ "386_prefetch", "386(预取) - 使用预取队列模拟(仅限自动和普通核心) " },
+			{ "486_slow", "486(慢) - 带有内存特权检查的486指令集" },
+			{ "pentium_slow", "奔腾(慢速) - 带有内存特权检查的586指令集" },
 		},
 		"auto"
 	},
 	{
 		"dosbox_pure_cpu_core",
-		"System > Advanced > CPU Core",
-		"Emulation method (DOSBox CPU core) used.",
+		"系统 > 高级 > CPU内核",
+		"使用的模拟方式(DOSBox CPU内核)",
 		{
 			#if defined(C_DYNAMIC_X86)
-			{ "auto", "Auto - Real-mode games use normal, protected-mode games use dynamic" },
-			{ "dynamic", "Dynamic - Dynamic recompilation (fast, using dynamic_x86 implementation)" },
+			{ "auto", "自动 - 真实模式的游戏使用普通, 受保护模式的游戏使用动态" },
+			{ "dynamic", "动态 - 动态重新编译(快速, 使用dynamic_x86实现)" },
 			#elif defined(C_DYNREC)
-			{ "auto", "Auto - Real-mode games use normal, protected-mode games use dynamic" },
-			{ "dynamic", "Dynamic - Dynamic recompilation (fast, using dynrec implementation)" },
+			{ "auto", "自动 - 真实模式的游戏使用普通, 受保护模式的游戏使用动态" },
+			{ "dynamic", "动态 - 动态重新编译(快速, 使用动态重编译实现)" },
 			#endif
-			{ "normal", "Normal (interpreter)" },
-			{ "simple", "Simple (interpreter optimized for old real-mode games)" },
+			{ "normal", "普通 (解释器)" },
+			{ "simple", "简化 (为旧实模式游戏优化的解释器)" },
 		},
 		#if defined(C_DYNAMIC_X86) || defined(C_DYNREC)
 		"auto"
@@ -339,14 +339,14 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_menu_time",
-		"System > Advanced > Start Menu",
-		"Set the behavior of the start menu before and after launching a game." "\n"
-		"You can also force it to open by holding shift or L2/R2 when selecting 'Restart'." "\n\n", //end of System > Advanced section
+		"系统 > 高级 > 开始菜单",
+		"在启动游戏之前和之后设置开始菜单的行为." "\n"
+		"还可以通过在选择重启时按住shift或L2/R2来强制打开." "\n\n", //end of System > Advanced section
 		{
-			{ "5", "Show at start, shut down core 5 seconds after auto started game exit" },
-			{ "3", "Show at start, shut down core 3 seconds after auto started game exit" },
-			{ "0", "Show at start, shut down core immediately after auto started game exit" },
-			{ "-1", "Always show menu on startup and after game exit, ignore auto start setting" },
+			{ "5", "开始时显示, 在自动开始的游戏退出后5秒关闭核心" },
+			{ "3", "开始时显示, 在自动开始的游戏退出后3秒关闭核心" },
+			{ "0", "开始时显示, 在自动开始的游戏退出后立即关闭核心" },
+			{ "-1", "游戏开始或者退出后总是显示菜单, 忽略自动开始设定" },
 		},
 		"5"
 	},
@@ -354,8 +354,8 @@ static retro_core_option_definition option_defs[] =
 	// Audio
 	{
 		"dosbox_pure_audiorate",
-		"Audio > Audio Sample Rate (restart required)",
-		"This should match the frontend audio output rate (Hz) setting.",
+		"音频 > 音频采样率(需要重新启动)",
+		"这应与前端音频输出频率(Hz)设置匹配.",
 		{
 			{ "48000", NULL },
 			{ "44100", NULL },
@@ -373,8 +373,8 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_sblaster_conf",
-		"Audio > SoundBlaster Settings",
-		"Set the address, interrupt, low 8-bit and high 16-bit DMA.",
+		"音频 > SoundBlaster设置",
+		"设置地址、中断、低8位和高16位DMA.",
 		{
 			// Some common (and less common) port, irq, low and high dma settings (based on a very scientific web search)
 			{ "A220 I7 D1 H5",  "Port 0x220, IRQ 7, 8-Bit DMA 1, 16-bit DMA 5"  },
@@ -392,10 +392,10 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_midi",
-		"Audio > MIDI Output",
-		"Select the .SF2 SoundFont file, .ROM file or interface used for MIDI output." "\n"
-		"To add SoundFonts or ROM files, copy them into the 'system' directory of the frontend." "\n"
-		"To use the frontend MIDI driver, make sure it's set up correctly." "\n\n", //end of Audio section
+		"音频 > MIDI输出",
+		"选择.SF2 波表文件, .ROM文件或用于MIDI输出的接口." "\n"
+		"要添加SoundFonts或ROM文件, 请将它们复制到前端的'system'目录中." "\n"
+		"要使用前端MIDI驱动程序, 请确保已正确设置." "\n\n", //end of Audio section
 		{
 			// dynamically filled in retro_init
 		},
@@ -403,50 +403,50 @@ static retro_core_option_definition option_defs[] =
 	},
 	{
 		"dosbox_pure_sblaster_type",
-		"Audio > Advanced > SoundBlaster Type",
-		"Type of emulated SoundBlaster card.",
+		"音频 > 高级 > SoundBlaster类型",
+		"模拟的SoundBlaster卡的类型.",
 		{
-			{ "sb16", "SoundBlaster 16 (default)" },
+			{ "sb16", "SoundBlaster 16 (默认)" },
 			{ "sbpro2", "SoundBlaster Pro 2" },
 			{ "sbpro1", "SoundBlaster Pro" },
 			{ "sb2", "SoundBlaster 2.0" },
 			{ "sb1", "SoundBlaster 1.0" },
 			{ "gb", "GameBlaster" },
-			{ "none", "none" },
+			{ "none", "无" },
 		},
 		"sb16"
 	},
 	{
 		"dosbox_pure_sblaster_adlib_mode",
-		"Audio > Advanced > SoundBlaster Adlib/FM Mode",
-		"The SoundBlaster emulated FM synth mode. All modes are Adlib compatible except CMS.",
+		"音频 > 高级 > SoundBlaster Adlib/FM 模式",
+		"SoundBlaster模拟FM合成器模式. 除CMS之外所有模式均兼容Adlib.",
 		{
-			{ "auto",     "Auto (select based on the SoundBlaster type) (default)" },
+			{ "auto",     "自动 (根据SoundBlaster类型选择) (默认)" },
 			{ "cms",      "CMS (Creative Music System / GameBlaster)" },
 			{ "opl2",     "OPL-2 (AdLib / OPL-2 / Yamaha 3812)" },
 			{ "dualopl2", "Dual OPL-2 (Dual OPL-2 used by SoundBlaster Pro 1.0 for stereo sound)" },
 			{ "opl3",     "OPL-3 (AdLib / OPL-3 / Yamaha YMF262)" },
 			{ "opl3gold", "OPL-3 Gold (AdLib Gold / OPL-3 / Yamaha YMF262)" },
-			{ "none",     "Disabled" },
+			{ "none",     "关闭" },
 		},
 		"auto"
 	},
 	{
 		"dosbox_pure_sblaster_adlib_emu",
-		"Audio > Advanced > SoundBlaster Adlib Provider",
-		"Provider for the Adlib emulation. Default has good quality and low performance requirements.",
+		"音频 > 高级 > SoundBlaster Adlib提供者",
+		"Adlib仿真的提供者. 默认具有良好的质量和较低的性能要求.",
 		{
-			{ "default", "Default" },
-			{ "nuked", "High quality Nuked OPL3" },
+			{ "default", "默认" },
+			{ "nuked", "高品质Nuked OPL3" },
 		},
 		"default"
 	},
 	{
 		"dosbox_pure_gus",
-		"Audio > Advanced > Enable Gravis Ultrasound (restart required)",
-		"Enable Gravis Ultrasound emulation. Settings are fixed at port 0x240, IRQ 5, DMA 3." "\n"
-		"If the ULTRADIR variable needs to be different than the default 'C:\\ULTRASND' you need to issue 'SET ULTRADIR=...' in the command line or in a batch file." "\n\n", //end of Audio > Advanced section
-		{ { "false", "Off (default)" }, { "true", "On" } },
+		"音频 > 高级 > 启用Gravis Ultrasound(需要重新启动)",
+		"启用Gravis Ultrasound仿真. 设置固定在端口0x240, IRQ 5, DMA 3." "\n"
+		"如果ULTRADIR变量需要不同于默认的'C:\\ULTRASND', 则需要在命令行或批处理文件中输入'SET ULTRADIR=...'." "\n\n", //end of Audio > Advanced section
+		{ { "false", "关 (默认)" }, { "true", "开" } },
 		"false"
 	},
 
